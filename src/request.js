@@ -73,8 +73,8 @@ export default class Request {
 		method = method.toUpperCase();
 
 		if ((init.body != null || isRequest(input) && input.body !== null) &&
-			(method === 'GET' || method === 'HEAD')) {
-			throw new TypeError('Request with GET/HEAD method cannot have body');
+			(method === 'HEAD')) {
+			throw new TypeError('Request with HEAD method cannot have body');
 		}
 
 		let inputBody = init.body != null ?
